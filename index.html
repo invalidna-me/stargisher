@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en" xml:lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>The Last Stargisher</title>
+
+
+<!-- Import the font's stylesheet from Google Web Fonts library -->
+<link href='http://fonts.googleapis.com/css?family=Nothing+You+Could+Do' rel='stylesheet' type='text/css'>
+
+<style type="text/css">
+body {
+  background-image: url('corkboard.jpg');
+}
+.sticky {
+	/* General */
+	margin: 0;
+	/* Padding: Top/Bottom Left/Right */
+	padding: 8px 24px;
+	/* Width: Adjust to your purpose */
+	width: 380px;
+	/* Uncomment the following line if you'd like to maintain a square  shape */
+	/* height: 380px; */
+	/* Font: After importing font, put font's name in single quotes */
+	font-family: 'Nothing You Could Do', Arial;
+	font-size: 1.4em;
+	color: blue
+	/* Border */
+	border:1px #E8Ds47 solid;
+	/* Shadow */
+	-moz-box-shadow:0px 0px 6px 1px #333333;
+	-webkit-box-shadow:0px 0px 6px 1px #333333;
+	box-shadow:0px 0px 6px 1px #333333;
+	/* Background */
+	background: #fefdca; /* Old browsers */
+	background: -moz-linear-gradient(top, #fefdca 0%, #f7f381 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#fefdca), color-stop(100%,#f7f381)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, #fefdca 0%,#f7f381 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, #fefdca 0%,#f7f381 100%); /* Opera11.10+ */
+	background: -ms-linear-gradient(top, #fefdca 0%,#f7f381 100%); /* IE10+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fefdca', endColorstr='#f7f381',GradientType=0 ); /* IE6-9 */
+	background: linear-gradient(top, #fefdca 0%,#f7f381 100%); /* W3C; A catch-all for everything else */
+}
+
+.sticky::before {
+	display: block;
+  background-image: url(pushpin.png);
+  height: 87px;
+  width: 100px;
+  content: '';
+}
+
+
+.sticky p {
+	/* Text-Align: align the heading to the center */
+	text-align: center;
+}
+
+.sticky ol {
+	/* Margin: Distance from top of list to heading */
+	margin: 12px;
+}
+
+
+
+ .polaroid a {
+        background: #ffffff;
+        display: inline-block;
+        margin: 55px 75px 30px;
+        padding: 15px 15px 30px;
+        text-align: center;
+        text-decoration: none;
+        -webkit-box-shadow: 0 4px 6px rgba(0, 0, 0, .3);
+        -moz-box-shadow: 0 4px 6px rgba(0, 0, 0, .3);
+        box-shadow: 0 4px 6px rgba(0, 0, 0, .3);
+        -webkit-transition: all .20s linear;
+        -moz-transition: all .20s linear;
+        transition: all .20s linear;
+        z-index: 0;
+        position: relative;
+      }
+      .polaroid::after{
+	display: block;
+  background-image: url(pushpin.png);
+  height: 87px;
+  width: 100px;
+  content: '';
+  top: -380px;
+  left: 50px;  
+  position: relative
+      }
+      .polaroid a:after {
+        color: #333;
+        font-size: 25px;
+        font-family: 'Nothing You Could Do', Arial;
+        content: attr(title);
+        position: relative;
+        top: 15px;
+        
+      }
+      .polaroid img {
+        display: block;
+        width: 250px;
+      }
+      
+      
+      .box {
+  position: relative;
+  margin: 40px auto;
+  width: 400px;
+  height: 350px;
+  background: #fff;
+  border-radius: 2px;
+}
+
+.box::before,
+.box::after {
+  content: '';
+  position: absolute;
+  bottom: 10px;
+  width: 40%;
+  height: 10px;
+  box-shadow: 0 5px 14px rgba(0,0,0,.7);
+  z-index: -1;
+  transition: all .3s ease-in-out;
+}
+
+.box::before {
+  left: 15px;
+  transform: skew(-5deg) rotate(-5deg);
+}
+
+.box::after {
+  right: 15px;
+  transform: skew(5deg) rotate(5deg);
+}
+
+.box:hover::before,
+.box:hover::after {
+  box-shadow: 0 2px 14px rgba(0,0,0,.4);
+}
+
+.box:hover::before {
+  left: 5px;
+}
+
+.box:hover::after {
+  right: 5px;
+}
+
+:root {
+  --pink: #ecb2ba;
+  --pink-dark: #c6939a;
+  --tape-gray: #dbd8be;
+  --tape-edge-gray: #b7b49d;
+  --transparent: rgba(255, 255, 255, 0);
+}
+
+
+.pink {
+  --paper-color: var(--pink);
+  --paper-dark: var(--pink-dark);
+  --shadow-size: 1px;
+  --transparent: rgba(236, 178, 186, 0);
+}
+
+.blue {
+  --paper-color: #d5e0f9;
+  --paper-dark: #c2d0ea;
+  --shadow-size: 3px;
+  --transparent: rgba(213, 224, 249, 0);
+}
+
+.paper {
+  position: relative;
+  background: linear-gradient(
+      to bottom right,
+      var(--paper-dark),
+      20%,
+      var(--transparent)
+    ),
+    var(--paper-color);
+  min-width: 250px;
+  min-height: 130px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Caveat", cursive;
+  
+  font-size: 2rem;
+  box-shadow: var(--shadow-size) var(--shadow-size) 2px var(--paper-dark);
+  margin: auto;
+  margin-top: 50px;
+}
+
+.paper::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+      var(--transparent),
+      50%,
+      var(--paper-dark),
+      51%,
+      var(--transparent)
+    ),
+    linear-gradient(
+      to right,
+      var(--transparent),
+      50%,
+      var(--paper-dark),
+      51%,
+      var(--transparent)
+    );
+}
+
+.tape-section {
+  position: absolute;
+  width: 100%;
+}
+
+.top-tape {
+  position: absolute;
+  height: 4vmin;
+  top: -5px;
+  width: 110%;
+  background-color: var(--tape-gray);
+  border-right: 1px dotted var(--tape-edge-gray);
+  border-left: 1px dotted var(--tape-edge-gray);
+  opacity: 0.5;
+}
+
+.tape-section:first-of-type {
+  top: 0;
+}
+
+.tape-section:last-of-type {
+  bottom: 0;
+}
+
+.tape-section::before,
+.tape-section::after {
+  content: "";
+  width: 10vmin;
+  height: 4vmin;
+  position: absolute;
+  background-color: var(--tape-gray);
+  opacity: 0.5;
+  border-right: 1px dotted var(--tape-edge-gray);
+  border-left: 1px dotted var(--tape-edge-gray);
+}
+
+.tape-section:last-of-type::after {
+  transform: rotate(-45deg);
+  right: -4vmin;
+  top: -3vmin;
+}
+
+.tape-section:first-of-type::before {
+  transform: rotate(-45deg);
+  left: -4vmin;
+}
+
+.tape-section:first-of-type::after {
+  transform: rotate(45deg);
+  right: -4vmin;
+  top: 0;
+}
+
+.tape-section:last-of-type::before {
+  transform: rotate(45deg);
+  left: -4vmin;
+  bottom: 0;
+}
+      
+</style>
+</head>
+
+<body>
+
+<div class="sticky" style="margin: 0 40%">
+	<p>
+	<strong>The hypothesis:</strong>
+	<br />
+	<h1 style="color:red;font-size:29px;">GISH is not what it seems</h1>  
+	</p>
+</div>
+
+  <div class="paper blue" style="margin: 50px 300px" width="20%">
+    <div class="top-tape"></div>
+    <p>What is more likely: That, purely out of the goodness of their heart, an 'actor' created a weeklong celebration of creativity and kindess, encouraging people to embrace their authentic selves no matter how "weird" they think that might be?<br><br>Or...<br><br> that an intergalactic committee created a cult TV show with the sole purpose of building a fanbase, later introducing a beloved character and then weaponizing the fanbase then training them to take part in large multi day events where they will work at the behest of unknown masters with little sleep while solving puzzles and pushing their imagination further than they dreamed possible?<br><br>Clearly the latter is the only explanation.</p>
+  </div>
+
+<table>
+<tr>
+<td>
+<div class="sticky" style="margin: 0px 300px 200px 300px">
+    <p style="font-family:  'Caveat', cursive">Ok, so here's the thing. While GISH advertises winning awesome swag and meeting awesomer people, it's actually all a big fucking conspiracy...</p>
+  </div>
+</td>
+<td>
+<div class="sticky" style="margin: 50px 100px">
+	<p>This "competition" draws hordes of people willing to give up their sanity, scorch themselves with hot glue, cover their bodies with everything from kale to cotton candy, buy metric tons of rainbow colored candies and use them for things they were NEVER intended to be used for... BUT WHY?<br>Surely not just to bring joy and peace to the populace?! </p>
+</div>
+</tr>
+</table>
+
+<div class="paper pink" style="margin: 20px 500px">
+    <div class="tape-section"></div>
+    <p>Could the competition be a cover for something? 
+    <br><br>
+    The answer is a resounding YES!
+    <br><br>
+    This farce is actually a front for pushing the liberal agendas of EQUITY and PEACE and LOVE and KINDNESS and GENEROSITY and ACCEPTANCE and GOODNESS and JUSTICE.
+    <br><br>
+    Since 2011, it has been used to unleash the creativity and wonder that resides in all people everywhere around the globe to solve intergalactic problems that nobody else has mangaged to solve.
+    <p>
+    <div class="tape-section"></div>
+  </div>
+  
+
+  
+  <div class="sticky" style="margin: 0px 700px">
+	<p>
+	Misha and Charlie: <br> useful idiots or extraterrestial overseers? <br><br><br> CHILL(ax)<br>(Committee to Harness Intergalactic Luminous Legions)
+	<p>
+</div>
+
+<table><tr><td>
+ <div class="polaroid" style="margin: 50px 300px">
+      <a href="#" title="Misha Collins">
+        <img height="250" src="https://static.gish.com/wp-content/uploads/2021/08/mishaeclipse.jpg" />
+      </a>
+    </div>
+</td><td>
+<div class="sticky" style="margin: 0px 0px">
+	<p>
+	Misha Collins<br>=<br>i aM Chill's sons<br>Clear evidence they are in league with this committee
+	<p>
+</div>
+</td></tr></table>
+
+<div class="paper pink" style="margin: 20px 500px">
+   <div class="top-tape"></div>
+    <p>From wikipedia:
+    <br><br>
+    "decentralized projects like Gishwhes, with creators who fully immerse themselves in the surrounding digital cultures, show us the potential for future transmedia creative authorship in millennial culture."
+    <br><br>
+    In other words, "we create, therefore we live."  Their mantra as they try to take over the world...
+    <p>
+    <div class="tape-section"></div>
+  </div>
+
+<div class="sticky" style="margin: 50px 20%">
+	<p>What happens to the winners?<br>A holiday? HA! <br>They travel to an undisclosed location to work together to create even MORE "good" in the world, bringing more "kindness" to life across the galaxy</p>
+</div>
+
+ <div class="paper blue" style="margin: 50px 300px" width="20%">
+    <div class="top-tape"></div>
+    <p>Why do these beings do this? They appear to hold the following beliefs:
+    <br><br>
+    <a href="https://www.equalitytexas.org/">They believe that trans rights are human rights and that the intersectionality of race, gender and sexuality is real</a>
+    <br><br>
+    <a href="https://www.plannedparenthood.org">They believe that reproductive rights should be dictated by those that have the physiology most impacted by legislation, and that reproductive oppression is racist and homophobic   </a>
+    <br><br>
+    <a href="https://give.randomacts.org/team/439525">They scream NO MORE WAR and urge everyone to recognize that suffering does not end when the bombing does</a>
+    <br><br>
+    <a href="https://www.nwirp.org/">They believe that borders are imaginary and that all of our neighbors deserve respect and kindness?</a>
+    
+  </div>
+    
+
+<div class="paper pink" style="margin: 20px 500px;z font-family: 'Nothing You Could Do', Arial;">
+   <div class="tape-section"></div>
+    <p>
+    So, now that you know the REAL truth behind GISH, play at your own risk!! 
+    <div class="tape-section"></div>
+  </div>
+
+</body>
+</html>
